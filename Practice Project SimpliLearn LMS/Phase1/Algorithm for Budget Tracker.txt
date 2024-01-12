@@ -1,0 +1,65 @@
+Algorithm for Budget Tracker App:
+
+1.Initialize necessary data structures:
+
+	Create a HashMap to store monthly budgets (monthlyBudgets).
+	Create a HashMap to store expenses (expenses).
+	Create a HashMap to store budgetary logs (budgetLogs), where each log entry is identified by a unique integer key.
+
+2.Start the main application loop:
+	Display a welcome message and prompt the user to log in.
+
+3.Login Process:
+	Prompt the user for their username and password.
+	Check if the provided username and password match the predefined admin credentials (ADMIN_USERNAME and ADMIN_PASSWORD).
+	If the login is successful, proceed to the main menu; otherwise, repeat the login process.
+
+4.Main Menu Loop:
+	Display the main menu options:
+	Set Monthly Budget
+	Record an Expense
+	Budgetary Logs
+	Change Password
+	Exit
+	Prompt the user to select an option.
+
+5.Handle User Menu Selection:
+  	Based on the user's choice, execute the corresponding function:
+	setMonthlyBudget: Prompt the user for a month and budget amount, and update the monthlyBudgets HashMap.
+	recordExpense: Prompt the user for expense details (category, amount, password), validate the password, check if the expense is within the budget, and record the expense in the expenses HashMap.
+	viewBudgetaryLogs: Display sub-menu options for viewing budgetary logs:
+	Date-Wise Log: Prompt for a date and display logs for that date.
+	Month-Wise Log: Prompt for a month number and display logs for that month.
+	Total Budget: Calculate and display the total budget, current budget, and total spending.
+	Delete Budgetary Log: Prompt for a month to delete logs and remove logs for that month.
+	changePassword: Prompt the user for the current password and a new password, validate the current password, and update the ADMIN_PASSWORD if the current password is correct.
+	exit: Terminate the application.
+
+6.Date-Wise Log Display:
+	Prompt the user for a date.
+	Check if logs exist for the provided date in the budgetLogs HashMap.
+	If logs exist, display the logs (ID, date, category, amount, description).
+
+7.Month-Wise Log Display:
+	Prompt the user for a month number.
+	Iterate through monthlyBudgets and retrieve logs for that month from the budgetLogs HashMap.
+	Display the logs (ID, date, category, amount, description).
+
+8.Total Budget Display:
+	Calculate the monthly budget, total spending, and current budget.
+	Display the calculated values.
+
+9.Delete Budgetary Log:
+	Prompt the user for a month number.
+	Check if logs exist for the provided month in the budgetLogs HashMap.
+	If logs exist, remove the logs for that month from budgetLogs.
+
+10.Password Change:
+	Prompt the user for the current password and a new password.
+	Validate the current password against ADMIN_PASSWORD.
+	If valid, update ADMIN_PASSWORD with the new password.
+
+11.Exit the Application:
+	Display a goodbye message and terminate the application.
+
+12.Repeat the main menu loop until the user chooses to exit.
